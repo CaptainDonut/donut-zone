@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 function App() {
-  const [data, setData] = useState('');
+return(
+<BrowserRouter>
+<Routes>
+  <Route path='/' element={<Login/>}/>
+  <Route path='/signup' element={<Signup/>}/>
+</Routes>
+</BrowserRouter>
 
-  useEffect(() => {
-    (async function () {
-      const { text } = await( await fetch(`/api/message`)).json();
-      setData(text);
-    })();
-  });
-
-  return <div>{data}</div>;
+);
 }
 
 export default App;
