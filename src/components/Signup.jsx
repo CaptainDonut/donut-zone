@@ -13,35 +13,58 @@ function Signup() {
 
   })
   
+
+/*  const registerUser = () => {
+    account.create(
+      'unique()',
+      email, 
+      password, 
+      username).then(res => {
+            account.createSession(email, password)
+                .then(res1 => {
+                    //Navigate to home page
+                }).catch(err => {
+                    console.log("error in creating session", err)
+                })
+        }).catch(err => {
+            console.log("error in creating user", err)
+        })
+}*/
+
+
+
+
 const signupUser = async (e) => {
 e.preventDefault()
 
   //Signup, create a new user
   const promise = account.create(
-    uuidv4(),
-    user.name,
+    'unique()',
     user.email,
-    user.password
+    user.password,
+    user.name
       );
 
-      // promise.then(
-      //   async function (response) { await
-      //     console.log(response);
-      //   },
-      //   async function (error) { await
-      //     console.log(error);
-      //   }
+      promise.then(
+        async function (response) { await
+          console.log(response);
+        },
+        async function (error) { await
+          console.log(error);
+        })
+        console.log("Hello, it's: " + user.name);
+        console.log("Hello, it's: " + user.email);
+        console.log("Hello, it's: " + user.password);
 
-
-promise.then(
-  function(response){
-    console.log(response);
-    navigate("/profile") //success, could be redirected to login
-  },
-  function(error) {
-    console.log(error); //fail
-  }
-)
+// promise.then(
+//   function(response){
+//     console.log(response);
+//     navigate("/profile") //success, could be redirected to login
+//   },
+//   function(error) {
+//     console.log(error); //fail
+//   }
+// )
 
 }
 
@@ -57,7 +80,7 @@ promise.then(
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Name
+                  Name fat
                 </label>
                 <div className="mt-1">
                   <input
