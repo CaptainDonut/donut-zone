@@ -1,38 +1,16 @@
 import React, {useState} from 'react'
 import { account } from '../appwrite/appwriteConf'
-import { useNavigate } from 'react-router-dom'
-import {v4 as uuidv4} from 'uuid'
+//import { useNavigate } from 'react-router-dom'
 
 
 function Signup() {
-  const navigate = useNavigate()
+  //const navigate = useNavigate()
   const [user, setUser] = useState({
   name: "",
   email: "",
   password: ""
 
   })
-  
-
-/*  const registerUser = () => {
-    account.create(
-      'unique()',
-      email, 
-      password, 
-      username).then(res => {
-            account.createSession(email, password)
-                .then(res1 => {
-                    //Navigate to home page
-                }).catch(err => {
-                    console.log("error in creating session", err)
-                })
-        }).catch(err => {
-            console.log("error in creating user", err)
-        })
-}*/
-
-
-
 
 const signupUser = async (e) => {
 e.preventDefault()
@@ -80,7 +58,7 @@ e.preventDefault()
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Name fat
+                  Name
                 </label>
                 <div className="mt-1">
                   <input

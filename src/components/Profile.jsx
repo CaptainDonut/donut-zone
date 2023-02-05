@@ -22,7 +22,7 @@ useEffect(() => {
      }
 
     )
-}, [])
+}, [userDetails]) //???
 
 //logout button function
 
