@@ -14,7 +14,9 @@ useEffect(() => {
     const getData = account.get() //if a login session is active, you get data from the account
     getData.then(
      function(response){
+        if (!userDetails) { //run only once if userDetails is undefined
         setUserDetails(response)
+        }
         console.log(userDetails);
      },
      function(error){
@@ -22,7 +24,7 @@ useEffect(() => {
      }
 
     )
-}, [userDetails]) //???
+}, [userDetails])
 
 //logout button function
 
@@ -56,7 +58,7 @@ const handleLogout = async () => { //async needs await,  no need for any event
           </div>
           {/* TODO FORM */}
           <DonutForm />
-          {/* TODOS BOX */}
+          {/* TODO BOX */}
           <DonutBase />
         </>
       ) : ( //if it is not present...
