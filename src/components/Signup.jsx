@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { account } from '../appwrite/appwriteConf'
+import { ID, account } from '../appwrite/appwriteConf'
 //import { useNavigate } from 'react-router-dom'
 
 
@@ -17,17 +17,16 @@ e.preventDefault()
 
   //Signup, create a new user
   const promise = account.create(
-    'unique()',
+    ID.unique(),
     user.email,
     user.password,
     user.name
       );
 
-      promise.then(
-        async function (response) { await
+      promise.then(function (response) {
           console.log(response);
         },
-        async function (error) { await
+        function (error) {
           console.log(error);
         })
         console.log("Hello, it's: " + user.name);

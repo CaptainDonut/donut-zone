@@ -8,4 +8,4 @@ export const databases = new Databases(client, "63dc0ed016dccb1ebc1a") //databas
 
 client
     .setEndpoint('https://appwrite.donut.zone/v1')
-    .setProject('63dc0c0837d79bb0f999')
+    .setProject('6402095141b7d552c3c0')
