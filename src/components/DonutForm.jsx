@@ -6,7 +6,7 @@ function DonutForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const promise = databases.createDocument("64020b470c9c427c3b5b", "64020b71e5bf81bf875a", 'unique()', { list }) //appwrite database id, collection id, unique identifier, state
+        const promise = databases.createDocument("6406468874a62f5d047e", "6406469a133a9b2410b5", 'unique()', { list }) //appwrite database id, collection id, unique identifier, state
 
         //Do this as a method instead
         promise.then(
